@@ -1,0 +1,62 @@
+$colores: (
+  azul: #008ed6,
+  gris: #333,
+);
+
+@mixin fun($color,$background) {
+  color: $color;
+  background: $background;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+body {
+  background: map-get($colores, gris);
+  color: #fff;
+}
+
+.navbar {
+  border-bottom: map-get($colores, azul) 3px solid;
+  opacity: 0.8;
+}
+
+#home-section {
+  background: url(../img/home.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 700px;
+
+  .dark-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 700px;
+    background: rgba(0, 0, 0, 0.7);
+  }
+
+  .home-inner {
+    padding-top: 150px;
+  }
+
+  .card-form {
+    opacity: 0.8;
+  }
+}
+
+#home-section .fas,
+#create-section .fas {
+  color: map-get($colores, gris);
+  background: #fff;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+#explore-section .fas,
+#share-section .fas {
+  color: #fff;
+  background: map-get($colores, gris);
+  padding: 5px;
+  border-radius: 5px;
+}
