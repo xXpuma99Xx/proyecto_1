@@ -3,7 +3,7 @@ $colores: (
   gris: #333,
 );
 
-@mixin fun($color,$background) {
+@mixin fun($color, $background) {
   color: $color;
   background: $background;
   padding: 5px;
@@ -47,16 +47,12 @@ body {
 
 #home-section .fas,
 #create-section .fas {
-  color: map-get($colores, gris);
-  background: #fff;
-  padding: 5px;
-  border-radius: 5px;
+
+  @include fun(map-get($colores, gris), #fff);
 }
 
 #explore-section .fas,
 #share-section .fas {
-  color: #fff;
-  background: map-get($colores, gris);
-  padding: 5px;
-  border-radius: 5px;
+
+  @include fun(#fff, map-get($colores, gris));
 }
